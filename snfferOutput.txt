@@ -1,0 +1,71 @@
+C:\Users\daila\Desktop\T>python sniffer.py -i Wi-Fi
+Starting sniffer on interface Wi-Fi (promisc=True)
+Press Ctrl-C to stop and show summary.
+
+--- Live stats (10 packets) ---
+Protocols: UDP:5, OTHER:5
+Top src IPs: 192.168.1.9(4), 192.168.1.12(1), fe80::1011:184c:36dd:431d(1), fe80::1841:b42c:fa87:f65e(1)
+Top dst ports: 5353(5)
+Recent packets:
+ 192.168.1.9 -> 224.0.0.251  proto=17 len=100
+ e0:60:4a:e1:6a:b1 -> ff:ff:ff:ff:ff:ff  proto=None len=60
+ e0:60:4a:e1:6a:b1 -> ff:ff:ff:ff:ff:ff  proto=None len=60
+ e0:60:4a:e1:6a:b1 -> ff:ff:ff:ff:ff:ff  proto=None len=60
+ fe80::1841:b42c:fa87:f65e -> ff02::fb  proto=ipv6 len=120
+------------------------------------
+
+--- Live stats (20 packets) ---
+Protocols: OTHER:9, UDP:8, TCP:3
+Top src IPs: 192.168.1.9(4), 2a06:98c1:3107::6812:2715(2), 192.168.1.4(2), 192.168.1.12(1), fe80::1011:184c:36dd:431d(1)
+Top dst ports: 5353(7), 44875(2), 443(1), 57621(1)
+Recent packets:
+ d4:00:68:d9:7d:00 -> ff:ff:ff:ff:ff:ff  proto=None len=60
+ e0:60:4a:e1:6a:b1 -> ff:ff:ff:ff:ff:ff  proto=None len=60
+ e0:60:4a:e1:6a:b1 -> ff:ff:ff:ff:ff:ff  proto=None len=60
+ e0:60:4a:e1:6a:b1 -> ff:ff:ff:ff:ff:ff  proto=None len=60
+ 192.168.1.4 -> 192.168.1.255  proto=17 len=82
+------------------------------------
+
+Caught interrupt — stopping sniffing...
+
+=== Final summary ===
+Total packets: 21
+Protocol counts:
+  OTHER: 9
+  UDP: 8
+  TCP: 4
+Top 10 source IPs:
+  192.168.1.9: 4
+  2a06:98c1:3107::6812:2715: 2
+  192.168.1.4: 2
+  192.168.1.12: 1
+  fe80::1011:184c:36dd:431d: 1
+  fe80::1841:b42c:fa87:f65e: 1
+  2400:adca:122:8800:8c17:3b77:bd09:7f97: 1
+  fe80::609f:47ff:feb1:6df6: 1
+  2a06:98c1:3108::ac40:94eb: 1
+Top 10 destination IPs:
+  224.0.0.251: 5
+  ff02::fb: 3
+  2400:adca:122:8800:8c17:3b77:bd09:7f97: 3
+  224.0.0.2: 1
+  2a06:98c1:3107::6812:2715: 1
+  192.168.1.255: 1
+Top destination ports:
+  5353: 7
+  44875: 2
+  443: 1
+  57621: 1
+  44771: 1
+Recent packet examples:
+{'ts': '2025-12-03T21:55:02.930179Z', 'eth_src': 'd4:00:68:d9:7d:00', 'eth_dst': '20:16:b9:d7:be:78', 'proto': 'ipv6', 'src': '2a06:98c1:3108::ac40:94eb', 'dst': '2400:adca:122:8800:8c17:3b77:bd09:7f97', 'sport': 443, 'dport': 44771, 'len': 98, 'extra': 'PAYLOAD(24b): \x17\x03\x03\x00\x13�+�7�E\x18����b9+p\x00\x14�'}
+{'ts': '2025-12-03T21:55:02.710141Z', 'eth_src': 'd4:00:68:d9:7d:00', 'eth_dst': 'ff:ff:ff:ff:ff:ff', 'proto': None, 'src': None, 'dst': None, 'sport': None, 'dport': None, 'len': 60, 'extra': None}
+{'ts': '2025-12-03T21:55:02.094740Z', 'eth_src': 'e0:60:4a:e1:6a:b1', 'eth_dst': 'ff:ff:ff:ff:ff:ff', 'proto': None, 'src': None, 'dst': None, 'sport': None, 'dport': None, 'len': 60, 'extra': None}
+{'ts': '2025-12-03T21:55:01.996484Z', 'eth_src': 'e0:60:4a:e1:6a:b1', 'eth_dst': 'ff:ff:ff:ff:ff:ff', 'proto': None, 'src': None, 'dst': None, 'sport': None, 'dport': None, 'len': 60, 'extra': None}
+{'ts': '2025-12-03T21:55:01.896047Z', 'eth_src': 'e0:60:4a:e1:6a:b1', 'eth_dst': 'ff:ff:ff:ff:ff:ff', 'proto': None, 'src': None, 'dst': None, 'sport': None, 'dport': None, 'len': 60, 'extra': None}
+{'ts': '2025-12-03T21:55:01.788621Z', 'eth_src': '62:9f:47:b1:6d:f6', 'eth_dst': 'ff:ff:ff:ff:ff:ff', 'proto': 17, 'src': '192.168.1.4', 'dst': '192.168.1.255', 'sport': 57621, 'dport': 57621, 'len': 82, 'extra': None}
+{'ts': '2025-12-03T21:55:01.177758Z', 'eth_src': '62:9f:47:b1:6d:f6', 'eth_dst': '33:33:00:00:00:fb', 'proto': 'ipv6', 'src': 'fe80::609f:47ff:feb1:6df6', 'dst': 'ff02::fb', 'sport': 5353, 'dport': 5353, 'len': 139, 'extra': None}
+{'ts': '2025-12-03T21:55:01.175764Z', 'eth_src': '62:9f:47:b1:6d:f6', 'eth_dst': '01:00:5e:00:00:fb', 'proto': 17, 'src': '192.168.1.4', 'dst': '224.0.0.251', 'sport': 5353, 'dport': 5353, 'len': 119, 'extra': None}
+{'ts': '2025-12-03T21:55:01.073584Z', 'eth_src': 'd4:00:68:d9:7d:00', 'eth_dst': '20:16:b9:d7:be:78', 'proto': 'ipv6', 'src': '2a06:98c1:3107::6812:2715', 'dst': '2400:adca:122:8800:8c17:3b77:bd09:7f97', 'sport': 443, 'dport': 44875, 'len': 74, 'extra': None}
+{'ts': '2025-12-03T21:55:00.871166Z', 'eth_src': '20:16:b9:d7:be:78', 'eth_dst': 'd4:00:68:d9:7d:00', 'proto': 'ipv6', 'src': '2400:adca:122:8800:8c17:3b77:bd09:7f97', 'dst': '2a06:98c1:3107::6812:2715', 'sport': 44875, 'dport': 443, 'len': 102, 'extra': 'PAYLOAD(28b): \x17\x03\x03\x00\x17���?@JU\x06\x0c�P��\x03��\x1cd�\x11�w�'}
+Done.
